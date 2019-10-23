@@ -1,0 +1,17 @@
+[package]
+name = "bug-repro"
+version = "0.1.0"
+authors = ["pk <pkinsky@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+tracing = "0.1.9"
+tracing-core = "0.1.7"
+tracing-futures = {version = "0.1.0", features = ["futures-preview", "tokio-alpha"]}
+tracing-subscriber = "0.1"
+tracing-attributes = "0.1.4"
+
+tonic = "0.1.0-alpha.3"
