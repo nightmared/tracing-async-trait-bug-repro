@@ -1,3 +1,4 @@
+use async_trait::async_trait;
 use tracing::instrument;
 
 fn main() {
@@ -6,7 +7,7 @@ fn main() {
 
 
 
-#[tonic::async_trait]
+#[async_trait]
 pub trait Foo
 where
     Self: std::marker::Send,
@@ -14,9 +15,10 @@ where
     async fn foo(&self) -> ();
 }
 
+#[derive(Debug)]
 struct FooImpl;
 
-#[tonic::async_trait]
+#[async_trait]
 impl Foo for FooImpl {
     #[instrument]
     async fn foo(&self) {}
